@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-29T13:26:02 CDT" name="Default suite" finished-at="2024-04-29T13:26:37 CDT" duration-ms="34591">
+  <suite started-at="2024-04-30T15:08:36 CDT" name="Default suite" finished-at="2024-04-30T15:09:34 CDT" duration-ms="57085">
     <groups>
     </groups>
-    <test started-at="2024-04-29T13:26:02 CDT" name="Default test" finished-at="2024-04-29T13:26:37 CDT" duration-ms="34591">
+    <test started-at="2024-04-30T15:08:36 CDT" name="Default test" finished-at="2024-04-30T15:09:34 CDT" duration-ms="57085">
       <class name="baseClass.BaseClass">
-        <test-method is-config="true" signature="setUpProject()[pri:0, instance:baseClass.BaseClass@44c03695]" started-at="2024-04-29T13:26:02 CDT" name="setUpProject" finished-at="2024-04-29T13:26:04 CDT" duration-ms="1465" status="PASS">
+        <test-method is-config="true" signature="setUpProject()[pri:0, instance:baseClass.BaseClass@2f4948e4]" started-at="2024-04-30T15:08:37 CDT" name="setUpProject" finished-at="2024-04-30T15:08:40 CDT" duration-ms="2740" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpProject -->
-        <test-method signature="openBrowser()[pri:1, instance:baseClass.BaseClass@44c03695]" started-at="2024-04-29T13:26:04 CDT" name="openBrowser" finished-at="2024-04-29T13:26:36 CDT" duration-ms="31834" status="PASS">
+        <test-method signature="openBrowser()[pri:1, instance:baseClass.BaseClass@2f4948e4]" started-at="2024-04-30T15:08:40 CDT" name="openBrowser" finished-at="2024-04-30T15:09:02 CDT" duration-ms="22214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="fileUpLoad()[pri:4, instance:baseClass.BaseClass@44c03695]" started-at="2024-04-29T13:26:36 CDT" name="fileUpLoad" finished-at="2024-04-29T13:26:37 CDT" duration-ms="1046" status="FAIL">
+        <test-method signature="testSecondHomePage()[pri:3, instance:baseClass.BaseClass@2f4948e4]" started-at="2024-04-30T15:09:02 CDT" name="testSecondHomePage" finished-at="2024-04-30T15:09:27 CDT" duration-ms="25292" status="FAIL">
           <exception class="org.openqa.selenium.InvalidArgumentException">
             <message>
               <![CDATA[invalid argument
@@ -23,10 +23,10 @@
 Build info: version: '4.20.0', revision: '866c76ca80'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2431c3b5242c0f89ac38457a597ea734, clickElement {id=f.C2324F72919EC97110B92623027D8DB0.d.61DC0DDB97B80EAD74FBF810D00DFF66.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\risho\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58158}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58158/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (2431c3b5242c0f89ac38457a597ea734)] -> xpath: //*[@id="wpcf7-f2598-p2599-o1"]/form/p/span/input]
-Session ID: 2431c3b5242c0f89ac38457a597ea734]]>
+Command: [0db984fbd3041722848fab6ef2b2d0b4, clickElement {id=f.D98BE2A662895ECE3106E67778B86689.d.0BFE894B4284E7B7E0ABC495C666AB51.e.49}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\risho\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55143/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0db984fbd3041722848fab6ef2b2d0b4)] -> xpath: //*[@id="wpcf7-f2598-p2599-o1"]/form/p/span/input]
+Session ID: 0db984fbd3041722848fab6ef2b2d0b4]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.InvalidArgumentException: invalid argument
@@ -34,10 +34,10 @@ Session ID: 2431c3b5242c0f89ac38457a597ea734]]>
 Build info: version: '4.20.0', revision: '866c76ca80'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2431c3b5242c0f89ac38457a597ea734, clickElement {id=f.C2324F72919EC97110B92623027D8DB0.d.61DC0DDB97B80EAD74FBF810D00DFF66.e.49}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\risho\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58158}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58158/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (2431c3b5242c0f89ac38457a597ea734)] -> xpath: //*[@id="wpcf7-f2598-p2599-o1"]/form/p/span/input]
-Session ID: 2431c3b5242c0f89ac38457a597ea734
+Command: [0db984fbd3041722848fab6ef2b2d0b4, clickElement {id=f.D98BE2A662895ECE3106E67778B86689.d.0BFE894B4284E7B7E0ABC495C666AB51.e.49}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.61, chrome: {chromedriverVersion: 124.0.6367.91 (51df0e5e17a8..., userDataDir: C:\Users\risho\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55143}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55143/devtoo..., se:cdpVersion: 124.0.6367.61, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0db984fbd3041722848fab6ef2b2d0b4)] -> xpath: //*[@id="wpcf7-f2598-p2599-o1"]/form/p/span/input]
+Session ID: 0db984fbd3041722848fab6ef2b2d0b4
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -52,7 +52,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at baseClass.BaseClass.fileUpLoad(BaseClass.java:169)
+at baseClass.BaseClass.testSecondHomePage(BaseClass.java:141)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -86,7 +86,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.InvalidArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fileUpLoad -->
+        </test-method> <!-- testSecondHomePage -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:baseClass.BaseClass@2f4948e4]" started-at="2024-04-30T15:09:27 CDT" name="closeBrowser" finished-at="2024-04-30T15:09:34 CDT" duration-ms="6216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- baseClass.BaseClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

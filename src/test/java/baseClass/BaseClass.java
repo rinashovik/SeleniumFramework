@@ -10,6 +10,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
@@ -28,9 +29,9 @@ public class BaseClass {
 		
 
     WebDriver driver;
-    
-    @BeforeClass
-    void setUpProject() {
+		    
+		@BeforeClass
+		public void setUpProject() {
 
    
         WebDriverManager.chromedriver().setup();
@@ -41,7 +42,7 @@ public class BaseClass {
     }
     
     @Test(priority=1)
-    void openBrowser() {
+    public void openBrowser() {
 
         driver = new ChromeDriver();
         driver.get("https://www.google.com/");
@@ -49,11 +50,10 @@ public class BaseClass {
         
       //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-       String title = driver.getTitle();
+        String title = driver.getTitle();
         System.out.println("Title: " +title);
     	String url = driver.getCurrentUrl();
     	System.out.println("Current URL : " + url);
-    	driver.get("https://www.globalsqa.com/samplepagetest/");
 
 
         
@@ -78,9 +78,7 @@ public class BaseClass {
     	
     	
     	driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        
-    	   
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));         
 
      	   WebElement text = driver.findElement(By.xpath("/html/body/div[5]/main/article/section/div[1]/section[1]/h3"));
 
@@ -97,18 +95,17 @@ public class BaseClass {
     
         
     
-   // @Test(priority=3)
+    @Test(priority=3)
     void testSecondHomePage() throws AWTException {
     	
-    	driver.get("https://www.globalsqa.com/samplepagetest/");
+    	driver.get("https://www.globalsqa.com/samplepagetest/");  
     	
+    	driver.manage().window().maximize();
     	
     	String url = driver.getCurrentUrl();
-    	
     	System.out.println("Current URL : " + url);
         String pageTitle = driver.getTitle();
-        System.out.println(pageTitle);
-    	
+        System.out.println(pageTitle);  
     	
     	driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
@@ -117,92 +114,114 @@ public class BaseClass {
         WebElement text = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[1]/div[1]/div/div/div/div[2]/h1"));
      	   System.out.println("HTML Element: " + text.getTagName());
      	   System.out.println("Text: "+text.getText());
+    	   
      	   
-     	   
-     	   WebElement pic = driver.findElement(By.cssSelector("#wpcf7-f2598-p2599-o1 > form > p > strong"));
+     	   WebElement text2 = driver.findElement(By.cssSelector("#wpcf7-f2598-p2599-o1 > form > p > strong"));
      	  
      	   
-     	   System.out.println(pic.getText());
+     	   System.out.println(text2.getText());
      	   
-//     	   WebElement file = driver.findElement(By.xpath("//*[@id=\"wpcf7-f2598-p2599-o1\"]/form/p/span/input"));
-//
-//     	   //file.sendKeys("‪C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls");
-//     	   
-//
-//     	   
-//        file.click();
-//     	//Thread.sleep(20001);
-//        
-//     	String myString = "‪C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls";   
-//        StringSelection stringSelection = new StringSelection(myString);
-//        Clipboard clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();  
-//        clipBoard.setContents(stringSelection, null);
-//
-//        Robot robot = new Robot();
-//        
-//     	   robot.keyPress(KeyEvent.VK_CONTROL);
-//        robot.keyPress(KeyEvent.VK_V);
-//        
-//     	robot.keyRelease(KeyEvent.VK_CONTROL);
-//        robot.keyRelease(KeyEvent.VK_V);
-//        
-//       robot.keyPress(KeyEvent.VK_ENTER);
-//        robot.keyRelease(KeyEvent.VK_ENTER);
-//     	    	
-//     	 
      	   
+     	//Shortcut way to upload file   
+     	   
+     	//String filePath = System.getProperty("user.dir")+ "\\Files\\shadow.jpg";//good
+
+    	WebElement fileLocator= driver.findElement(By.xpath("//*[@id=\"wpcf7-f2598-p2599-o1\"]/form/p/span/input"));
+     	   
+     	  //fileLocator.sendKeys(filePath); //Upload file from project directory
+
+    	//fileLocator.sendKeys("C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls");//Good
+    	//System.out.println("File Successfully Uploaded: " + filePath);
+
+    	
+    	//Using Robot Class
+    	
+    	    	 // driver.findElement(By.xpath("//*[@id=\"wpcf7-f2598-p2599-o1\"]/form/p/span/input")).click()
+
+    	    		fileLocator.click();//  if click() doesn't work then use JavascriptExecutor Class
+
+  	    	 //JavascriptExecutor js = (JavascriptExecutor)driver;
+   	    	 
+   	   //js.executeScript(filePath, null);
+   	  // js.executeScript("arguments[0].click();",fileLocator);// Click action on the fileLocator
+   	   
+   	   /*
+   	    * Copy the path
+   	    *CTRL +V
+   	    *Enter
+   	    * 
+   	    * 
+   	    * 
+   	    */
+
+
+        Robot robot = new Robot();
+        robot.delay(5000);
+        
+        // copy the file in the clipboard
+     	String myString = "C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls"; 
+     	
+     	
+        StringSelection stringSelection = new StringSelection(myString);
+        // clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();  
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);  
+   	//clipboard.setContents(stringSelection, null);
+  
+        // CTRL + V (press)
+     	   robot.keyPress(KeyEvent.VK_CONTROL);
+     	   robot.keyPress(KeyEvent.VK_V);
+     	   
+        // Release the Key
+     	   robot.keyRelease(KeyEvent.VK_CONTROL);
+     	   robot.keyRelease(KeyEvent.VK_V);
+     	   
+        // Enter the Key
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+     	    	
+     	    	System.out.println("File Successfully Uploaded: " + myString);        
+     	    	
+     	    	
+          	   driver.switchTo().newWindow(WindowType.TAB);
+
      	    
     }
     
     
     
    
-    @Test(priority=4)
-    void fileUpLoad() throws AWTException, InterruptedException {
+    @Test(priority=4, enabled=false)
+    public void fileUpLoad() throws AWTException, InterruptedException {
     	
-    	 WebElement file = driver.findElement(By.xpath("//*[@id=\"wpcf7-f2598-p2599-o1\"]/form/p/span/input"));
+    	driver.get("https://omayo.blogspot.com/"); 
+    	driver.manage().window().maximize();
+    	
+    	driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+       
+			String path = System.getProperty("user.dir")+"\\Files\\testingData.docx";
 
-   	   //file.sendKeys("‪C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls");
-   	   
+    	WebElement file = driver.findElement(By.id("uploadfile"));
+    	
+    	// shortcut way to upload file
+    	
+    	   	 // file.sendKeys(filePath+ "\\Files\\testingData.docx");//Good
+    	   	  file.sendKeys(path);//Good
 
-   	   
-      file.click();
-   	Thread.sleep(2000);
-      
-   	String myString = "‪C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls";   
-      StringSelection stringSelection = new StringSelection(myString);
-      Clipboard clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();  
-      clipBoard.setContents(stringSelection, null);
+    	   	  
+    	   	  //file.sendKeys(filePath + "\\Files\\sunset_2.jpg");// good
 
-      Robot robot = new Robot();
-      
-   	   robot.keyPress(KeyEvent.VK_CONTROL);
-      robot.keyPress(KeyEvent.VK_V);
-      
-   	robot.keyRelease(KeyEvent.VK_CONTROL);
-      robot.keyRelease(KeyEvent.VK_V);
-      
-     robot.keyPress(KeyEvent.VK_ENTER);
-      robot.keyRelease(KeyEvent.VK_ENTER);
-   	    	
+    			//file.sendKeys("C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls");//Good
+    	   	  System.out.println("File Successfully Uploaded: " + path);
+
    	 
     }
     
-  //  @Test
-    void testForm() {
-    	
-    	
-//    	driver.findElement(By.id("g2599-name")).sendKeys("Rina");
-    	driver.findElement(By.xpath("//*[@id=\"g2599-name\"]")).sendKeys("Shovik");
-    	
-    	
-    	
-    	
-    }
+ 
     
     
     
-   // @AfterClass
+    @AfterClass
     void closeBrowser() {
  
         driver.quit();

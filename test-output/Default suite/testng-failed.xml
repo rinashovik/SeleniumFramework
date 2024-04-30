@@ -5,8 +5,9 @@
     <classes>
       <class name="baseClass.BaseClass">
         <methods>
-          <include name="fileUpLoad"/>
           <include name="setUpProject"/>
+          <include name="testSecondHomePage"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- baseClass.BaseClass -->
     </classes>
