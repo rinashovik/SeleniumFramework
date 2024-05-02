@@ -6,16 +6,23 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -96,7 +103,7 @@ public class BaseClass {
         
     
     @Test(priority=3)
-    void testSecondHomePage() throws AWTException {
+    void testSecondHomePage() throws AWTException, InterruptedException, IOException {
     	
     	driver.get("https://www.globalsqa.com/samplepagetest/");  
     	
@@ -116,9 +123,9 @@ public class BaseClass {
      	   System.out.println("Text: "+text.getText());
     	   
      	   
-     	   WebElement text2 = driver.findElement(By.cssSelector("#wpcf7-f2598-p2599-o1 > form > p > strong"));
+     	  // WebElement text2 = driver.findElement(By.cssSelector("#wpcf7-f2598-p2599-o1 > form > p > strong"));
      	  
-     	   
+     	  WebElement text2= driver.findElement(By.xpath("//input[@type='file']//..//.."));//parent element
      	   System.out.println(text2.getText());
      	   
      	   
@@ -156,14 +163,15 @@ public class BaseClass {
 
 
         Robot robot = new Robot();
-        robot.delay(5000);
+        Thread.sleep(5000);
+        //robot.delay(5000);
         
-        // copy the file in the clipboard
      	String myString = "C:\\Users\\risho\\OneDrive\\Desktop\\TestCaseTemplate.xls"; 
      	
-     	
+     	 // copy the file in the clipboard
+
         StringSelection stringSelection = new StringSelection(myString);
-        // clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();  
+        // ClipBoard clipBoard = Toolkit.getDefaultToolkit().getSystemClipboard();  
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);  
    	//clipboard.setContents(stringSelection, null);
   
@@ -179,6 +187,20 @@ public class BaseClass {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
      	    	
+        
+        Actions action = new Actions(driver);// Actions is a class
+        
+        action.sendKeys(Keys.PAGE_DOWN).perform();//page-down keypad
+//        action.sendKeys("rinashov").build();
+//        action.build();
+        
+        //Screenshot deleted as soon as executed done
+        File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        System.out.println(screenshotFile);
+        //copy the file before deleted
+
+        
+        FileHandler.copy(screenshotFile, new File("./Screen.jpg"));//Good
      	    	System.out.println("File Successfully Uploaded: " + myString);        
      	    	
      	    	
@@ -221,7 +243,7 @@ public class BaseClass {
     
     
     
-    @AfterClass
+   // @AfterClass
     void closeBrowser() {
  
         driver.quit();

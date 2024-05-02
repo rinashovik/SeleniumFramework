@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [SeleniumFrameworkSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="FunctionalTest(failed)" verbose="0">
     <classes>
       <class name="baseClass.BaseClass">
         <methods>
           <include name="setUpProject"/>
           <include name="testSecondHomePage"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- baseClass.BaseClass -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- FunctionalTest(failed) -->
+</suite> <!-- Failed suite [SeleniumFrameworkSuite] -->

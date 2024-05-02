@@ -7,7 +7,6 @@
         <methods>
           <include name="setUpProject"/>
           <include name="testSecondHomePage"/>
-          <include name="closeBrowser"/>
         </methods>
       </class> <!-- baseClass.BaseClass -->
     </classes>
