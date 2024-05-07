@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SeleniumFrameworkSuite">
-  <test thread-count="5" name="FunctionalTest">
+<suite name="FunctionalSuite">
+  <test name="FunctionalTest">
+	<parameter name="browser" value="Hello"></parameter>
     <classes>
-      <class name="baseClass.BaseClass"/>
+      <class name="basePkg.BaseClass"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Functional-Suite -->
+  </test> <!-- FunctionalTest -->
+  
+ 
+</suite> <!-- FunctionalSuite -->

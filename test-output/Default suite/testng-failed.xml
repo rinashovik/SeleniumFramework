@@ -3,12 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="baseClass.BaseClass">
+      <class name="basePkg.BaseClass">
         <methods>
-          <include name="setUpProject"/>
+          <include name="closeBrowser"/>
+          <include name="afterSuite"/>
           <include name="testSecondHomePage"/>
+          <include name="setUpProject"/>
+          <include name="beforeSuite"/>
+          <include name="openBrowser"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- baseClass.BaseClass -->
+      </class> <!-- basePkg.BaseClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,4 +1,4 @@
-package baseClass;
+package basePkg;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -26,21 +26,28 @@ import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import freemarker.log.Logger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 		
 
-    WebDriver driver;
+    private static final String alwaysRun = null;
+	WebDriver driver;
 		    
 		@BeforeClass
 		public void setUpProject() {
 
-   
+   System.out.println("Before Class Start Time: " + System.currentTimeMillis());
         WebDriverManager.chromedriver().setup();
         //WebDriverManager.chromedriver().driverVersion("93.0.4577.63").setup();// setUp specific driver version
 
@@ -48,25 +55,31 @@ public class BaseClass {
     
     }
     
-    @Test(priority=1)
-    public void openBrowser() {
 
+    @BeforeTest
+	    public void openBrowser() {
+
+System.out.println("Before Test Open the browser: " );
         driver = new ChromeDriver();
         driver.get("https://www.google.com/");
         driver.manage().window().maximize();
-        
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
       //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         String title = driver.getTitle();
         System.out.println("Title: " +title);
     	String url = driver.getCurrentUrl();
-    	System.out.println("Current URL : " + url);
-
-
-        
+    	System.out.println("Current URL : " + url);      
         
     }
     
+	@Parameters({"browser"})
+    @AfterTest
+ void browser(String browserName) {
+		
+		System.out.println("Before Test Open the browser: " + browserName);
+
+}
     
     
     @Test(priority=2, enabled=false)
@@ -145,6 +158,7 @@ public class BaseClass {
     	
     	    	 // driver.findElement(By.xpath("//*[@id=\"wpcf7-f2598-p2599-o1\"]/form/p/span/input")).click()
 
+        
     	    		fileLocator.click();//  if click() doesn't work then use JavascriptExecutor Class
 
   	    	 //JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -191,10 +205,10 @@ public class BaseClass {
         Actions action = new Actions(driver);// Actions is a class
         
         action.sendKeys(Keys.PAGE_DOWN).perform();//page-down keypad
-//        action.sendKeys("rinashov").build();
-//        action.build();
+
         
         //Screenshot deleted as soon as executed done
+        
         File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         System.out.println(screenshotFile);
         //copy the file before deleted
@@ -203,6 +217,7 @@ public class BaseClass {
         FileHandler.copy(screenshotFile, new File("./Screen.jpg"));//Good
      	    	System.out.println("File Successfully Uploaded: " + myString);        
      	    	
+     	    	       // Logger logger = Logger.getLogger("");
      	    	
           	   driver.switchTo().newWindow(WindowType.TAB);
 
@@ -212,7 +227,9 @@ public class BaseClass {
     
     
    
-    @Test(priority=4, enabled=false)
+   // @Test(priority=4, enabled=false)
+    
+    @Test (priority=4, invocationCount=3)
     public void fileUpLoad() throws AWTException, InterruptedException {
     	
     	driver.get("https://omayo.blogspot.com/"); 
@@ -239,15 +256,28 @@ public class BaseClass {
    	 
     }
     
- 
+	 @BeforeSuite
+	 void beforeSuite()
+	{
+	System.out.println("Before Suite Initialize all connections");
+	}    
+	
+	@AfterSuite
+	void afterSuite()
+	{
+	System.out.println("After Suite Close all connections");
+	    
+    }
     
     
-    
-   // @AfterClass
+    @AfterClass
+   
     void closeBrowser() {
- 
         driver.quit();
-        System.out.println("Browser is closing");
+        System.out.println("After Class Browser is closing");
+        System.out.println("End Time: "+ System.currentTimeMillis());
+
+        
     }
 
 	
