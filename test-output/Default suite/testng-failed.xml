@@ -7,9 +7,10 @@
         <methods>
           <include name="closeBrowser"/>
           <include name="finishTesting"/>
-          <include name="openBrowser"/>
+          <include name="init"/>
           <include name="testLoginPage"/>
-          <include name="setUpProject"/>
+          <include name="testHomePageTitle"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- testcases.Test_TC_LoginPage_001 -->
     </classes>

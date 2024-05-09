@@ -18,7 +18,7 @@ public class ReadConfig {
 	
 	public ReadConfig() {
 		
-		File file = new File("./Configuration/config.properties");
+		File file = new File("./src/test/resources/Configuration/config.properties");
 		
 		try {
 			FileInputStream fi = new FileInputStream(file);
@@ -26,11 +26,9 @@ public class ReadConfig {
 			try {
 				pro.load(fi);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -55,5 +53,19 @@ public String getPasswaord() {
 		String Password = pro.getProperty("Password");
 		return Password;
 	}
+
+
+
+public String getBrowserName() {
+
+	String browserName = pro.getProperty("browserName");
+	return browserName;
+	
+}
+public String getBrUrl() {
+	
+	return pro.getProperty("url");		
+	
+}
 	
 }
