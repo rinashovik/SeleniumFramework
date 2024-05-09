@@ -58,6 +58,7 @@ public class BaseClass {
 		{
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver();
+		driver.get("");
 		
 		}
 		else if(browser.equalsIgnoreCase("ie") || browser.equalsIgnoreCase("internet explorer")) 
