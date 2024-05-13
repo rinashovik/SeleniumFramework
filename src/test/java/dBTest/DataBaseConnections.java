@@ -1,11 +1,11 @@
 	
-	package dBTest;
+	package dbTest;
 	
 	import java.sql.Connection;
 	import java.sql.DriverManager;
 	import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+	import java.sql.SQLException;
+	import java.sql.Statement;
 	
 	import org.testng.annotations.AfterTest;
 	import org.testng.annotations.BeforeTest;
@@ -40,10 +40,13 @@ import java.sql.Statement;
 			
 			// Get connection to DB
 			Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-			System.out.println("Database Connection Established successfully");
 			
-			// Statement object to send the SQL statement to the Database
+			
+			// Create Statement object to send the SQL statement to the Database
 			stmt = con.createStatement();
+			
+			System.out.println("Database Connection Established successfully");
+			//logger.info("Database Connection Established successfully")
 			System.out.println("************");
 			
 			}
@@ -52,32 +55,40 @@ import java.sql.Statement;
 			e.printStackTrace();
 			
 			System.out.println("Database Connection Failed");
+			//logger.info("Database Connection Failed");
 			System.out.println("************");
 
 			
 			}
-			
+
+
 			}
 			
-			@Test
+			@Test(priority=3)
 			public void testData() throws SQLException {
 				
 			try
 			{
-			String query = "select * from user_profile";
+				
+				String query = "select * from user_profile";
 			
 			//Get the contents of user info  from user_profile table			
-			ResultSet res = stmt.executeQuery(query);//DDL
+			 ResultSet res = stmt.executeQuery(query);//DDL
 				
 			
 			// Print the result untill all the records are printed
 			// res.next() returns true if there is any next record else returns false
 			while (res.next())
 			{
-			System.out.print(res.getString(1));
-			System.out.print(" " + res.getString(2));
-			System.out.print(" " + res.getString(3));
-			System.out.println(" " + res.getString(4));
+				System.out.println(".........User Informations: ..........");
+			System.out.print(" \nUserId: "+res.getString(1));
+			System.out.print(" \nState: " + res.getString(2));
+			System.out.print("\nemail: " + res.getString(3));
+			System.out.println("\nFirst Name: " + res.getString(4));
+			System.out.println("\nLast Name:  " + res.getString(5));
+			System.out.println("\n............");
+
+
 			}
 			}
 			catch(Exception e)
@@ -92,11 +103,11 @@ import java.sql.Statement;
 
 			}
 			
-			//@Test
-			public void updateData() throws SQLException {
+			@Test(priority=2)
+			public void updateUser() throws SQLException {
 				
 				
-				String query = null;
+				String query = "update user_profile set state ='Texas' where (id = 5)";
 				int update = stmt.executeUpdate(query);
 				if(update ==1) {
 					System.out.println("inserted successfully : " + query);
@@ -109,6 +120,55 @@ import java.sql.Statement;
 	                con.close();
 
 				}
+				
+			}
+			
+			@Test(priority=4)
+			public void deleteUser()  {
+				
+				
+				String query = "delete from user_profile where first_name='Taba'";
+				
+				try {
+					stmt.execute(query);
+					
+					int deleteUser = 0;
+					
+					if(deleteUser ==1) {
+						System.out.println("inserted successfully : " + query);
+					}
+					else
+						{
+			                System.out.println("insertion failed");
+		
+			                // Closing the connections
+			                con.close();
+						}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+					
+			}
+				
+			@Test(priority=1)
+			public void insertUser()  {
+				
+				//execute sql statement
+				
+				String insertValues = "insert into user_profile values(17,'Alabama','code589@hoymail.com','Mai','Paoluy','158-568-9687')";
+				
+				try {
+					stmt.execute(insertValues);
+					System.out.println("Values inserted");
+
+					//logger.info("");
+				} catch (SQLException e) {
+					e.printStackTrace();
+					System.out.println("Error found");
+				}
+			
 				
 			}
 			

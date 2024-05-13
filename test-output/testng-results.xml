@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-09T13:28:11 CDT" name="Default suite" finished-at="2024-05-09T13:28:14 CDT" duration-ms="3201">
+  <suite started-at="2024-05-13T15:00:46 CDT" name="Default suite" finished-at="2024-05-13T15:00:49 CDT" duration-ms="2466">
     <groups>
     </groups>
-    <test started-at="2024-05-09T13:28:11 CDT" name="Default test" finished-at="2024-05-09T13:28:14 CDT" duration-ms="3201">
-      <class name="dBTest.DataBaseConnections">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:dBTest.DataBaseConnections@4116aac9]" started-at="2024-05-09T13:28:11 CDT" name="setUp" finished-at="2024-05-09T13:28:14 CDT" duration-ms="2777" status="PASS">
+    <test started-at="2024-05-13T15:00:46 CDT" name="Default test" finished-at="2024-05-13T15:00:49 CDT" duration-ms="2466">
+      <class name="dbTest.DataBaseConnections">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:46 CDT" name="setUp" finished-at="2024-05-13T15:00:48 CDT" duration-ms="1751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testData()[pri:0, instance:dBTest.DataBaseConnections@4116aac9]" started-at="2024-05-09T13:28:14 CDT" name="testData" finished-at="2024-05-09T13:28:14 CDT" duration-ms="219" status="PASS">
+        <test-method signature="insertUser()[pri:1, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="insertUser" finished-at="2024-05-13T15:00:48 CDT" duration-ms="123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertUser -->
+        <test-method signature="updateUser()[pri:2, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="updateUser" finished-at="2024-05-13T15:00:48 CDT" duration-ms="25" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUser -->
+        <test-method signature="testData()[pri:3, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="testData" finished-at="2024-05-13T15:00:48 CDT" duration-ms="215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:dBTest.DataBaseConnections@4116aac9]" started-at="2024-05-09T13:28:14 CDT" name="tearDown" finished-at="2024-05-09T13:28:14 CDT" duration-ms="6" status="PASS">
+        <test-method signature="deleteUser()[pri:4, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="deleteUser" finished-at="2024-05-13T15:00:49 CDT" duration-ms="99" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:49 CDT" name="tearDown" finished-at="2024-05-13T15:00:49 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- dBTest.DataBaseConnections -->
+      </class> <!-- dbTest.DataBaseConnections -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

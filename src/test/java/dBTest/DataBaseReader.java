@@ -1,4 +1,4 @@
-package dBTest;
+package dbTest;
 
 public class DataBaseReader {
 

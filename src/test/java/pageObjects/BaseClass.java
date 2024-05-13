@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,6 +43,8 @@ public class BaseClass {
 	public void init(){
 				
 	//public void init(String browser) {
+		logger= (Logger) LogManager.getLogger();
+		logger.getName();
 		
 		try {
 			
@@ -98,7 +101,8 @@ public class BaseClass {
       String cUrl = driver.getCurrentUrl();
       System.out.println(cUrl);
       String title = driver.getTitle();
-      System.out.println("Title: "+title);    
+      System.out.println("Title: "+title);
+      logger.info("Browesr successfully set up");
       
 	}
 	
