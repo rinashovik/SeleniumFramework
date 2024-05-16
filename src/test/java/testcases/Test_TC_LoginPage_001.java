@@ -10,7 +10,7 @@ import pageObjects.LoginPage;
 			
 		@Test(priority=1)
 		public void testLoginPage() {
-		
+		logger.info(baseURL);
 			driver.get(baseURL);
 			driver.manage().window().maximize();
 		    driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));	
@@ -30,7 +30,9 @@ import pageObjects.LoginPage;
 			lp.clickLoginButton();			
 			String actualHomePage = driver.getTitle();
 			System.out.println(actualHomePage);
-			String expectedHomePage = "Guru99 Bank Customer HomePage";
+			//String expectedHomePage = "Guru99 Bank Customer HomePage";
+			String expectedHomePage = "Guru99 Bank Manager HomePage";
+
 			Assert.assertEquals(actualHomePage, expectedHomePage);
 			
 		

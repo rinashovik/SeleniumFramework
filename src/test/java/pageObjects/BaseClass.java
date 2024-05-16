@@ -5,18 +5,19 @@ import java.time.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
+import org.testng.annotations.Test;import dbTest.DataBaseConnections;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ReadConfig;
 
@@ -61,7 +62,7 @@ public class BaseClass {
 		{
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver();
-		driver.get("");
+		driver.get("bUrl");
 		
 		}
 		else if(browser.equalsIgnoreCase("ie") || browser.equalsIgnoreCase("internet explorer")) 
@@ -72,7 +73,9 @@ public class BaseClass {
 		else if(browser.equalsIgnoreCase("edge"))
 		{
 		WebDriverManager.edgedriver().setup();
-		driver = new EdgeDriver();			
+		driver = new EdgeDriver();	
+		driver.get("bUrl");
+
 	}
 		else 
 	{
@@ -88,7 +91,7 @@ public class BaseClass {
 	}
 			
 		
-	@BeforeClass
+	@BeforeTest
 	public void setUp(){
 		
 	      //driver.get("https://www.google.com/");
@@ -99,21 +102,26 @@ public class BaseClass {
       driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
       driver.manage().window().maximize();
       String cUrl = driver.getCurrentUrl();
-      System.out.println(cUrl);
+      System.out.println("Current URL: "+cUrl);
       String title = driver.getTitle();
       System.out.println("Title: "+title);
       logger.info("Browesr successfully set up");
+	   driver.switchTo().newWindow(WindowType.TAB);
+      driver.get("https://demo.guru99.com/V4/index.php");      
+      driver.manage().window().maximize();
+
+      
       
 	}
 	
-	@AfterClass
+	@AfterTest
 	public void finishTesting(){
 		System.out.println("After Suite Browser is closing");
 	    System.out.println("End Time: "+ System.currentTimeMillis());
 	    
 	}
 	
-	@AfterSuite
+	//@AfterSuite
 	public void closeBrowser() {
 		//if(!driver==null) {
 		

@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="dbTest.DataBaseConnections">
+      <class name="dbTest.DataBaseReader">
         <methods>
+          <include name="finishTesting"/>
+          <include name="init"/>
+          <include name="testDb"/>
           <include name="setUp"/>
-          <include name="deleteUser"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- dbTest.DataBaseConnections -->
+      </class> <!-- dbTest.DataBaseReader -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

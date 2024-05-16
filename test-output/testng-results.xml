@@ -2,36 +2,40 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-13T15:00:46 CDT" name="Default suite" finished-at="2024-05-13T15:00:49 CDT" duration-ms="2466">
+  <suite started-at="2024-05-16T14:25:32 CDT" name="Default suite" finished-at="2024-05-16T14:26:32 CDT" duration-ms="59968">
     <groups>
     </groups>
-    <test started-at="2024-05-13T15:00:46 CDT" name="Default test" finished-at="2024-05-13T15:00:49 CDT" duration-ms="2466">
-      <class name="dbTest.DataBaseConnections">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:46 CDT" name="setUp" finished-at="2024-05-13T15:00:48 CDT" duration-ms="1751" status="PASS">
+    <test started-at="2024-05-16T14:25:32 CDT" name="Default test" finished-at="2024-05-16T14:26:32 CDT" duration-ms="59968">
+      <class name="dbTest.DataBaseReader">
+        <test-method is-config="true" signature="init()[pri:0, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:25:13 CDT" name="init" finished-at="2024-05-16T14:25:32 CDT" duration-ms="19971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:25:33 CDT" name="setUp" finished-at="2024-05-16T14:26:08 CDT" duration-ms="35135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="insertUser()[pri:1, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="insertUser" finished-at="2024-05-13T15:00:48 CDT" duration-ms="123" status="PASS">
+        <test-method signature="testLandingPage()[pri:1, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:26:09 CDT" name="testLandingPage" finished-at="2024-05-16T14:26:12 CDT" duration-ms="3459" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- insertUser -->
-        <test-method signature="updateUser()[pri:2, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="updateUser" finished-at="2024-05-13T15:00:48 CDT" duration-ms="25" status="PASS">
+        </test-method> <!-- testLandingPage -->
+        <test-method signature="testDbConnection()[pri:2, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:26:12 CDT" name="testDbConnection" finished-at="2024-05-16T14:26:17 CDT" duration-ms="5187" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUser -->
-        <test-method signature="testData()[pri:3, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="testData" finished-at="2024-05-13T15:00:48 CDT" duration-ms="215" status="PASS">
+        </test-method> <!-- testDbConnection -->
+        <test-method signature="testLoginPage()[pri:3, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:26:17 CDT" name="testLoginPage" finished-at="2024-05-16T14:26:32 CDT" duration-ms="14783" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testData -->
-        <test-method signature="deleteUser()[pri:4, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:48 CDT" name="deleteUser" finished-at="2024-05-13T15:00:49 CDT" duration-ms="99" status="PASS">
+        </test-method> <!-- testLoginPage -->
+        <test-method signature="testGetUsers()[pri:4, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:26:32 CDT" name="testGetUsers" finished-at="2024-05-16T14:26:32 CDT" duration-ms="380" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:dbTest.DataBaseConnections@62ddbd7e]" started-at="2024-05-13T15:00:49 CDT" name="tearDown" finished-at="2024-05-13T15:00:49 CDT" duration-ms="1" status="PASS">
+        </test-method> <!-- testGetUsers -->
+        <test-method is-config="true" signature="finishTesting()[pri:0, instance:dbTest.DataBaseReader@24269709]" started-at="2024-05-16T14:26:32 CDT" name="finishTesting" finished-at="2024-05-16T14:26:32 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- dbTest.DataBaseConnections -->
+        </test-method> <!-- finishTesting -->
+      </class> <!-- dbTest.DataBaseReader -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

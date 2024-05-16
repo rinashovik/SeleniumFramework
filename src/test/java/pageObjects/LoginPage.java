@@ -10,8 +10,13 @@ public class LoginPage{
 
 	WebDriver driver;
 	
+//	@FindBy(xpath="/html/body/form/table/tbody/tr[1]/td[2]/input")
+//	WebElement userId;
+	
 	@FindBy(xpath="/html/body/form/table/tbody/tr[1]/td[2]/input")
+	
 	WebElement userId;
+
 	@FindBy(name="password")
 	WebElement password;
 	
