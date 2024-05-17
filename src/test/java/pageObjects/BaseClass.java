@@ -44,7 +44,8 @@ public class BaseClass {
 	public void init(){
 				
 	//public void init(String browser) {
-		logger= (Logger) LogManager.getLogger();
+		logger= (Logger) LogManager.getLogger("SeleniumFramework");
+		//PropertyConfigurator.configure("Log4j.properties");
 		logger.getName();
 		
 		try {
@@ -54,7 +55,7 @@ public class BaseClass {
 		WebDriverManager.chromedriver().setup();
 		//WebDriverManager.chromedriver().startRecording("Record");
 		driver = new ChromeDriver();
-		driver.get("bUrl");
+		//driver.get("bUrl");
 
 		}
 		else if(browser.equalsIgnoreCase("firefox") || browser.equalsIgnoreCase("mozilla")) 
@@ -62,7 +63,7 @@ public class BaseClass {
 		{
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver();
-		driver.get("bUrl");
+		//driver.get("bUrl");
 		
 		}
 		else if(browser.equalsIgnoreCase("ie") || browser.equalsIgnoreCase("internet explorer")) 
@@ -74,7 +75,7 @@ public class BaseClass {
 		{
 		WebDriverManager.edgedriver().setup();
 		driver = new EdgeDriver();	
-		driver.get("bUrl");
+		//driver.get("bUrl");
 
 	}
 		else 
@@ -95,7 +96,7 @@ public class BaseClass {
 	public void setUp(){
 		
 	      //driver.get("https://www.google.com/");
-			driver.get(bUrl);
+			//driver.get(bUrl);
 			System.out.println("Browser URL: " + bUrl);
 			System.out.println("Browser Name: " + browser);
 			

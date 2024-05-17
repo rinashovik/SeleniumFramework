@@ -17,8 +17,13 @@ public class ReadConfig {
 //	
 	
 	public ReadConfig() {
+		//File file = new File("./src/test/resources/testData/login_Testdata.xlsx");
+
 		
 		File file = new File("./src/test/resources/Configuration/config.properties");
+		
+		
+		//String file ="./src/test/resources/Configuration/config.properties";
 		
 		try {
 			FileInputStream fi = new FileInputStream(file);

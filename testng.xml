@@ -5,9 +5,9 @@
 
   <test  name="UI-Test">
     <classes>
-     <!-- <class name="testcases.Test_TC_LoginPage_001"/>-->
+    <!--<class name="testcases.Test_TC_LoginPage_001"/>-->
      
-      <class name="dBTest.DataBaseTesting"/>
+      <class name="dbTest.DataBaseTesting"/>
     </classes>
     
     

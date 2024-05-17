@@ -181,7 +181,7 @@ import org.testng.annotations.AfterTest;
 				
 				try {
 					stmt.execute(insertValues);
-					System.out.println("Values inserted");
+					System.out.println("Values inserted successfully");
 
 					//logger.info("");
 				} catch (SQLException e) {
