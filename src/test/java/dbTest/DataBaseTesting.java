@@ -21,24 +21,25 @@ public class DataBaseTesting extends BaseClass{
 	}
 	public DataBaseTesting(String dbName) {
 		this.dbName = dbName;
-		System.out.println("Creating DB Connection for: " +dbName);
+		//System.out.println("Creating DB Connection for: " +dbName);
+		logger.info("Creating DB Connection for");
 	}
 	
-	
-	@Test(priority=2)
+
+	@Test(priority=1)
 	public void testDbConnection() throws Exception {
 	DataBaseConnections.setUpDbConnection();
 	 db = new DataBaseConnections();
 
 		DataBaseConnections.setUpDbConnection();
-		db.getUser();
+		//db.getUser();
 		String userName = DataBaseConnections.username;
 		System.out.println(userName);
 		
 		String password = DataBaseConnections.password;
 		System.out.println(password);
 	}	
-	@Test(priority=1)
+	@Test(priority=2)
 	public void testLandingPage() {
 	logger.info(baseURL);
 		driver.get(baseURL);

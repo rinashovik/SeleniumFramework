@@ -16,6 +16,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class Reporting extends TestListenerAdapter{
 
@@ -29,43 +30,59 @@ public class Reporting extends TestListenerAdapter{
 
 	//private ExtentTest test;
 	
-	@BeforeMethod
+	//@BeforeMethod
 	public void onStart(ITestContext testContext) {
 		
-		String timeStamp = new SimpleDateFormat("yyyy.hr.mm.ss").format(new Date());
-		sparkReporter = new ExtentSparkReporter(".\\extent-reports\\report.html");
-		 //sparkReporter = new ExtentSparkReporter(".\\Extented-Reports\\reports.html");
-
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
+		
+//		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
+//
+//		repName = "Test-Report-"+"timeStamp"+".html";
+//		sparkReporter = new ExtentSparkReporter(".\\extent-reports\\"+repName);		
+		sparkReporter = new ExtentSparkReporter(".\\reports\\Test-Report-"+"timeStamp"+".html");
 		extent = new ExtentReports();
 		extent.attachReporter(sparkReporter);
+		sparkReporter.config().setDocumentTitle("RestAssuredAutomationProject");
+		sparkReporter.config().setReportName("Regrassion Testing");
+		sparkReporter.config().setTheme(Theme.DARK);
+		
+		extent.setSystemInfo("Application", "Guro99 Bank Application");
+		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
 		extent.setSystemInfo("Host Name", "local Host");
 		extent.setSystemInfo("Envoronment", "QA");
-		extent.setSystemInfo("user", "Rina S.");
-		//extent.setSystemInfo(timeStamp, timeStamp);
-
-
-
-		
-		
-	}
-	
-public void onTestSucess(ITestResult tr) {
-	
-	test= extent.createTest(tr.getName());
-	
-	test.log(Status.PASS, MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
+		extent.setSystemInfo("User", "Rina S.");
+		extent.setSystemInfo("TimeStamp", timeStamp);		
 		
 	}
 
-public void onTestFailure(ITestResult tr) {
 	
-	test= extent.createTest(tr.getName());	
-	test.log(Status.FAIL, MarkupHelper.createLabel(tr.getName(), ExtentColor.RED));
-	String screenShotPath = System.getProperty("./screenShot.png");
+public void onTestSuccess(ITestResult result) {
+
+	test = extent.createTest(result.getName());
+
+	test.assignCategory(result.getMethod().getGroups());
+	test.createNode(result.getName());
+	//test.log(Status.PASS, "This is a logging event for MyFirstTest, and it passed!");
+	test.log(Status.PASS,"Test Passed");
+	
+	}
+
+public void onTestFailure(ITestResult result) {
+	
+	test = extent.createTest(result.getName());
+	test.createNode(result.getName());
+	test.assignCategory(result.getMethod().getGroups());
+	test.log(Status.FAIL,"Test Failed");
+	test.log(Status.FAIL, result.getThrowable().getMessage());
+	test.log(Status.FAIL, MarkupHelper.createLabel(result.getName(), ExtentColor.RED));
+
+	
+	//String screenShotPath = System.getProperty(".//screenShot.png");
+	String screenShotPath = (".//screenShot.png");
 	File fi = new File(screenShotPath);
 	if(fi.exists()){
 		
-		try {
+		try{
 			test.fail("ScreenShot is below: " + test.addScreenCaptureFromPath(screenShotPath));
 		}
 		catch(Exception e) {
@@ -77,13 +94,16 @@ public void onTestFailure(ITestResult tr) {
 	
 }
 
-public void onTestSkipped(ITestResult tr) {
-	test= extent.createTest(tr.getName());	
-	test.log(Status.SKIP, MarkupHelper.createLabel(tr.getName(), ExtentColor.ORANGE));
-	
+public void onTestSkipped(ITestResult result) {
+	test = extent.createTest(result.getName());
+	test.createNode(result.getName());
+	test.assignCategory(result.getMethod().getGroups());
+	test.log(Status.SKIP, "Test Skipped");
+	test.log(Status.SKIP, result.getThrowable().getMessage());
+
 }
 
-public void onFinished(ITestContext testContext) {
+public void onFinish(ITestContext testContext) {
 	
 	extent.flush();
 	

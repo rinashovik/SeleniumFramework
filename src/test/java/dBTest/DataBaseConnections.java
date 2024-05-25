@@ -7,6 +7,7 @@
 	import java.sql.SQLException;
 	import java.sql.Statement;
 
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 	import org.testng.annotations.BeforeTest;
@@ -26,6 +27,7 @@ import org.testng.annotations.AfterTest;
 			public static String DB_PASSWORD = "stldatabase1234";
 			static String username;
 			static String password;
+			static Logger logger;
 			
 			
 		//	@BeforeClass
@@ -49,7 +51,7 @@ import org.testng.annotations.AfterTest;
 			stmt = con.createStatement();
 			
 			System.out.println("Database Connection Established successfully");
-			//logger.info("Database Connection Established successfully")
+			logger.info("Database Connection Established successfully");
 			System.out.println("************");
 			
 			}
@@ -58,7 +60,7 @@ import org.testng.annotations.AfterTest;
 			e.printStackTrace();
 			
 			System.out.println("Database Connection Failed");
-			//logger.info("Database Connection Failed");
+			logger.info("Database Connection Failed");
 			System.out.println("************");
 
 			
@@ -181,7 +183,8 @@ import org.testng.annotations.AfterTest;
 				
 				try {
 					stmt.execute(insertValues);
-					System.out.println("Values inserted successfully");
+					//System.out.println("Values inserted successfully");
+					logger.info("Values inserted successfully");
 
 					//logger.info("");
 				} catch (SQLException e) {
@@ -199,6 +202,7 @@ import org.testng.annotations.AfterTest;
 			con.close();
 			// close connection
 	        System.out.println("Connection Closed....");
+	        logger.info("Connection Closed....");
 			}
 			}
 			}

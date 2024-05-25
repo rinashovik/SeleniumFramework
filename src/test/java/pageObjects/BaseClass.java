@@ -3,7 +3,7 @@ package pageObjects;
 import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,7 +44,7 @@ public class BaseClass {
 	public void init(){
 				
 	//public void init(String browser) {
-		logger= (Logger) LogManager.getLogger("SeleniumFramework");
+		logger=  LogManager.getLogger(this.getClass());
 		//PropertyConfigurator.configure("Log4j.properties");
 		logger.getName();
 		
@@ -106,19 +106,19 @@ public class BaseClass {
       System.out.println("Current URL: "+cUrl);
       String title = driver.getTitle();
       System.out.println("Title: "+title);
-      logger.info("Browesr successfully set up");
-	   driver.switchTo().newWindow(WindowType.TAB);
+      logger.info("*********Browser successfully set up***********");
+	  driver.switchTo().newWindow(WindowType.TAB);
       driver.get("https://demo.guru99.com/V4/index.php");      
-      driver.manage().window().maximize();
-
-      
+      driver.manage().window().maximize();     
       
 	}
 	
 	@AfterTest
 	public void finishTesting(){
+		
 		System.out.println("After Suite Browser is closing");
 	    System.out.println("End Time: "+ System.currentTimeMillis());
+	    logger.info("**************After Test****************");
 	    
 	}
 	

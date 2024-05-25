@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-17T10:28:34 CDT" name="Default suite" finished-at="2024-05-17T10:28:51 CDT" duration-ms="16320">
+  <suite started-at="2024-05-25T13:42:48 CDT" name="AutomationSuite" finished-at="2024-05-25T13:43:13 CDT" duration-ms="24661">
     <groups>
     </groups>
-    <test started-at="2024-05-17T10:28:34 CDT" name="Default test" finished-at="2024-05-17T10:28:51 CDT" duration-ms="16320">
+    <test started-at="2024-05-25T13:42:48 CDT" name="UI-Test" finished-at="2024-05-25T13:43:13 CDT" duration-ms="24661">
       <class name="testcases.Test_TC_LoginPage_001">
-        <test-method is-config="true" signature="init()[pri:0, instance:testcases.Test_TC_LoginPage_001@1c1bbc4e]" started-at="2024-05-17T10:28:26 CDT" name="init" finished-at="2024-05-17T10:28:34 CDT" duration-ms="7939" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcases.Test_TC_LoginPage_001@45c7e403]" started-at="2024-05-25T13:42:30 CDT" name="init" finished-at="2024-05-25T13:42:48 CDT" duration-ms="18177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.Test_TC_LoginPage_001@1c1bbc4e]" started-at="2024-05-17T10:28:34 CDT" name="setUp" finished-at="2024-05-17T10:28:44 CDT" duration-ms="9626" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.Test_TC_LoginPage_001@45c7e403]" started-at="2024-05-25T13:42:53 CDT" name="setUp" finished-at="2024-05-25T13:43:00 CDT" duration-ms="6742" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLoginPage()[pri:1, instance:testcases.Test_TC_LoginPage_001@1c1bbc4e]" started-at="2024-05-17T10:28:44 CDT" name="testLoginPage" finished-at="2024-05-17T10:28:45 CDT" duration-ms="944" status="PASS">
+        <test-method signature="testLoginPage()[pri:1, instance:testcases.Test_TC_LoginPage_001@45c7e403]" started-at="2024-05-25T13:43:00 CDT" name="testLoginPage" finished-at="2024-05-25T13:43:02 CDT" duration-ms="1483" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginPage -->
-        <test-method signature="testHomePageTitle()[pri:2, instance:testcases.Test_TC_LoginPage_001@1c1bbc4e]" started-at="2024-05-17T10:28:45 CDT" name="testHomePageTitle" finished-at="2024-05-17T10:28:51 CDT" duration-ms="5547" status="PASS">
+        <test-method signature="testHomePageTitle()[pri:2, instance:testcases.Test_TC_LoginPage_001@45c7e403]" started-at="2024-05-25T13:43:03 CDT" name="testHomePageTitle" finished-at="2024-05-25T13:43:13 CDT" duration-ms="9763" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePageTitle -->
-        <test-method is-config="true" signature="finishTesting()[pri:0, instance:testcases.Test_TC_LoginPage_001@1c1bbc4e]" started-at="2024-05-17T10:28:51 CDT" name="finishTesting" finished-at="2024-05-17T10:28:51 CDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="finishTesting()[pri:0, instance:testcases.Test_TC_LoginPage_001@45c7e403]" started-at="2024-05-25T13:43:13 CDT" name="finishTesting" finished-at="2024-05-25T13:43:13 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finishTesting -->
       </class> <!-- testcases.Test_TC_LoginPage_001 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- UI-Test -->
+  </suite> <!-- AutomationSuite -->
 </testng-results>

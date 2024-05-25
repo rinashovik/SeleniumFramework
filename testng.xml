@@ -2,16 +2,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="AutomationSuite">
 	<parameter name="browser" value="edge"></parameter>
-
+<listeners>
+	<listener class-name="utilities.Reporting" />
+</listeners>
   <test  name="UI-Test">
     <classes>
-    <!--<class name="testcases.Test_TC_LoginPage_001"/>-->
+  <class name="testcases.Test_TC_LoginPage_001"/>
      
-      <class name="dbTest.DataBaseTesting"/>
+      <!--<class name="dbTest.DataTesting"/>-->
+          <!--<class name="dbTest.DataBaseTesting"/>-->
+
     </classes>
-    
-    
-    
-    
+       
   </test> <!-- AutomationTest -->
 </suite> <!-- AutomationSuite -->
