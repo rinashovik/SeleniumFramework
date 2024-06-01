@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="849172b7-1143-4307-b212-b63a027605a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/Test-Report-timeStamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/Test-Report-timeStamp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/AutomationFramework/AutomationFramework/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/AutomationFramework/AutomationFramework/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2024-05-09T13-31-52_048-jvmRun1.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2024-05-09T13-31-52_048-jvmRun1.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTest/DataBaseConnections.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dBTest/DataBaseConnections.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dBTest/DataTesting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dBTest/DataTesting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dbTest/DataBaseTesting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dbTest/DataBaseTesting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageObjects/BaseClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pageObjects/BaseClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pageObjects/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testcases/Test_TC_LoginPage_001.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testcases/Test_TC_LoginPage_001.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/ReadConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/utilities/ReadConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/Reporting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/utilities/Reporting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/XLUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/utilities/XLUtility.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2hFORoIIrmI0YKfOEPBN4Dfit5F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/risho/OneDrive/Desktop",
+    "settings.editor.selected.configurable": "project.propGUI"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="SeleniumFramework" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="SeleniumFramework" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="849172b7-1143-4307-b212-b63a027605a5" name="Changes" comment="" />
+      <created>1717186376758</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717186376758</updated>
+    </task>
+    <servers />
+  </component>
+</project>
