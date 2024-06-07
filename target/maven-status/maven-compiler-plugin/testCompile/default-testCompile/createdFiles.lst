@@ -1,7 +1,9 @@
-dBTest\DataBaseConnections.class
+utilities\Reporting.class
+dbTest\DataBaseConnections.class
 utilities\ReadConfig.class
 pageObjects\LoginPage.class
+utilities\XLUtility.class
+dbTest\DataTesting.class
 pageObjects\BaseClass.class
 testcases\Test_TC_LoginPage_001.class
-dBTest\DataTesting.class
-dBTest\DataBaseReader.class
+dbTest\DataBaseTesting.class

@@ -1,7 +1,9 @@
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\dBTest\DataBaseConnections.java
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\dBTest\DataBaseReader.java
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\dBTest\DataTesting.java
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\pageObjects\BaseClass.java
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\pageObjects\LoginPage.java
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\testcases\Test_TC_LoginPage_001.java
-C:\Users\risho\OneDrive\Desktop\Automation_Testing\SeleniumFramework\src\test\java\utilities\ReadConfig.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\dBTest\DataBaseConnections.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\dBTest\DataBaseTesting.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\dBTest\DataTesting.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\pageObjects\BaseClass.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\pageObjects\LoginPage.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\testcases\Test_TC_LoginPage_001.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\utilities\ReadConfig.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\utilities\Reporting.java
+C:\Users\risho\OneDrive\Desktop\SeleniumFramework\src\test\java\utilities\XLUtility.java
